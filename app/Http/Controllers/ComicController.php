@@ -41,12 +41,12 @@ class ComicController extends Controller
         //dd($request->all());
         $data = [
             'title' => $request['title'],
-            'title' => $request['description'],
-            'title' => $request['thumb'],
-            'title' => $request['price'],
-            'title' => $request['series'],
-            'title' => $request['sale_date'],
-            'title' => $request['type']
+            'description' => $request['description'],
+            'thumb' => $request['thumb'],
+            'price' => $request['price'],
+            'series' => $request['series'],
+            'sale_date' => $request['sale_date'],
+            'type' => $request['type']
         ];
         Comic::create($request->all());
         return redirect()->route('index');
