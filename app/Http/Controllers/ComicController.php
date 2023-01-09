@@ -36,19 +36,20 @@ class ComicController extends Controller
      * @param  \App\Http\Requests\StoreComicRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreComicRequest $request)
+    public function store(StoreComicRequest $request, Comic $comic)
     {
         //dd($request->all());
-        $data = [
-            'title' => $request['title'],
-            'description' => $request['description'],
-            'thumb' => $request['thumb'],
-            'price' => $request['price'],
-            'series' => $request['series'],
-            'sale_date' => $request['sale_date'],
-            'type' => $request['type']
-        ];
-        Comic::create($data);
+        $val_data = $request->validated();
+        // $data = [
+        //     'title' => $request['title'],
+        //     'description' => $request['description'],
+        //     'thumb' => $request['thumb'],
+        //     'price' => $request['price'],
+        //     'series' => $request['series'],
+        //     'sale_date' => $request['sale_date'],
+        //     'type' => $request['type']
+        // ];
+        $comic = Comic::create($val_data);
         return redirect()->route('index');
     }
     /**
@@ -82,16 +83,17 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $data = [
-            'title' => $request['title'],
-            'description' => $request['description'],
-            'thumb' => $request['thumb'],
-            'price' => $request['price'],
-            'series' => $request['series'],
-            'sale_date' => $request['sale_date'],
-            'type' => $request['type']
-        ];
-        $comic->update($data);
+        // $data = [
+        //     'title' => $request['title'],
+        //     'description' => $request['description'],
+        //     'thumb' => $request['thumb'],
+        //     'price' => $request['price'],
+        //     'series' => $request['series'],
+        //     'sale_date' => $request['sale_date'],
+        //     'type' => $request['type']
+        // ];
+        $val_data = $request->validated();
+        $comic->update($val_data);
         return to_route('index');
     }
 
