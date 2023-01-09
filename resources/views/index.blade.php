@@ -8,15 +8,15 @@
         <table class="table table-dark">
             <thead>
                 <tr>
-                    <th>id</th>
-                    <th>title</th>
-                    <th>image</th>
-                    <th>description</th>
-                    <th>price</th>
-                    <th>series</th>
-                    <th>sale date</th>
-                    <th>type</th>
-                    <th>actions</th>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Series</th>
+                    <th>Sale date</th>
+                    <th>Type</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,8 +35,8 @@
                         <a href="{{route('comics.edit',$comic->id)}}" class="btn btn-primary my-1"><i class="fa-regular fa-pen-to-square"></i></a>
 
                         <!-- Modal trigger button -->
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#deleteComic-{{$comic->id}}">
-                            <i class="fa-solid fa-trash text-white"></i>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteComic-{{$comic->id}}">
+                            <i class="fa-solid fa-trash"></i>
                         </button>
 
                         <!-- Modal Body -->
@@ -47,7 +47,7 @@
                                         <h5 class="modal-title" id="modalComicId-{{$comic->id}}">Delete Comic</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
+                                    <div class="modal-body  text-dark">
                                         Do you really want to delete this element permanently?
                                     </div>
                                     <div class="modal-footer">
@@ -55,7 +55,7 @@
                                         <form action="{{route('comics.destroy',$comic->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-warning">Delete</button>
+                                            <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </div>
                                 </div>

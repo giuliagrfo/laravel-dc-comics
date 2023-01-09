@@ -5,7 +5,7 @@
 <div class="container">
     <h3>Edit Comics</h3>
 
-    <form action="{{route('update', $comic->id)}}" method="post">
+    <form action="{{route('comics.update', $comic->id)}}" method="post">
         @csrf
         @method('PUT')
         <div class="mb-3">
