@@ -7,13 +7,13 @@
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{route ('index')}}" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                        <a class="nav-link active" href="{{route('comics.index')}}" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="{{route ('create')}}" aria-current="page">New Comics</a>
+                        <a class="nav-link " href="{{route('comics.create')}}" aria-current="page">New Comics</a>
                     </li>
                 </ul>
                 <form class="d-flex my-2 my-lg-0">

@@ -3,10 +3,11 @@
 @section('content')
 
 <div class="container">
-    <h3>Add new Comics</h3>
+    <h3>Edit Comics</h3>
 
-    <form action="{{route('comics.store')}}" method="post">
+    <form action="{{route('update', $comic->id)}}" method="post">
         @csrf
+        @method('PUT')
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" name="title" id="title" class="form-control" aria-describedby="helpId">
@@ -35,7 +36,7 @@
             <label for="type" class="form-label">Type</label>
             <input type="text" name="type" id="type" class="form-control" aria-describedby="helpId">
         </div>
-        <button type="submit" class="btn btn-primary my-3">Add New Comic</button>
+        <button type="submit" class="btn btn-primary my-3">Edit</button>
     </form>
 </div>
 

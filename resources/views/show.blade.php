@@ -8,7 +8,7 @@
         <h3>Comic info</h3>
 
         <div class="card">
-            <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+            <img class="img-fluid w-25" src="{{$comic->thumb}}" alt="{{$comic->title}}">
 
             <div class="card-body">
                 <h3>Title: {{$comic->title}}</h3>
@@ -19,7 +19,6 @@
                 <h3>Type: {{$comic->type}}</h3>
             </div>
         </div>
-
     </div>
 
 </div>

@@ -16,7 +16,7 @@ class ComicController extends Controller
     public function index()
     {
         //dd(Comic::all());
-        $comics = Comic::orderByDesc('id')->get();
+        $comics = Comic::all();
         return view('index', compact('comics'));
     }
 
@@ -48,7 +48,7 @@ class ComicController extends Controller
             'sale_date' => $request['sale_date'],
             'type' => $request['type']
         ];
-        Comic::create($request->all());
+        Comic::create($data);
         return redirect()->route('index');
     }
     /**
@@ -70,7 +70,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('edit', compact('comic'));
     }
 
     /**
@@ -82,7 +82,17 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        //
+        $data = [
+            'title' => $request['title'],
+            'description' => $request['description'],
+            'thumb' => $request['thumb'],
+            'price' => $request['price'],
+            'series' => $request['series'],
+            'sale_date' => $request['sale_date'],
+            'type' => $request['type']
+        ];
+        $comic->update($data);
+        return to_route('index');
     }
 
     /**
@@ -93,6 +103,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return to_route('index');
     }
 }
